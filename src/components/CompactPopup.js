@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { usePopup } from '../components/context/PopupContext'; 
 import { backdropVariants, popupVariants, rewardVariants1, rewardVariants2, imageVariants } from './animationVariants';
+import Image from 'next/image';
 
 const CompactPopup = () => {
   const { isVisible, hidePopup } = usePopup();

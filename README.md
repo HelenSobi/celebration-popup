@@ -62,8 +62,9 @@ To add new types of popups, create a new popup component and integrate it into t
 # Folder Structure
 .
 ├── components
-│   ├── FullPagePopup.js     # Full page popup component
-│   ├── CompactPopup.js      # Compact popup component
+│   ├── FullPagePopup.js          # Full page popup component
+│   ├── CompactPopup.js           # Compact popup component
+|   ├── animationVariants.js      # constant animation variants
 │   └── context
 │       └── PopupContext.js  # Context API for managing popup state
 ├── pages
