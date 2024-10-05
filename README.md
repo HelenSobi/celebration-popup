@@ -1,40 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Celebration Popups with Next.js, Tailwind CSS, and Framer
 
-## Getting Started
+This project is a Next.js application that features animated celebration popups with Framer Motion, styled using Tailwind CSS. The app demonstrates two types of celebration popups: a full-page popup and a compact reward popup, both of which are responsive for web and mobile. Popups are managed using Context API for global state management.
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can visit the live demo here: [Live Demo Link](#) (Add link if deployed)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- Full-page and compact popups with smooth animations
+- Global state management for showing/hiding popups using Context API
+- Responsive design using Tailwind CSS
+- Framer Motion for animation effects
+- Simple and clean UI for triggering popups
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Technologies
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [Next.js](https://nextjs.org/) - React framework for server-side rendering and static site generation
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for responsive designs
+- [Framer Motion](https://www.framer.com/motion/) - Library for animations and transitions
+- Context API - Built-in React API for managing global state
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js (v14 or higher)
+- npm 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Clone the repository:
 
-## Deploy on Vercel
+   git clone https://github.com/yourusername/celebration-popups.git
+   cd celebration-popups
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install the dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    npm install
+
+3. Run the development server:
+    npm run dev
+
+4. Open http://localhost:3000 to see the app in the browser.
+
+# Usage
+On the homepage, click on the buttons to trigger either a Full Page Popup or a Compact Popup.
+The popups are animated using Framer Motion and will appear based on the button clicked.
+The visibility of the popups is controlled by the Context API, ensuring smooth transitions between states.
+
+# Managing Popups
+Full Page Popup: Displays a full-screen celebratory animation with an XP bar and badge animation.
+Compact Popup: Displays a smaller, reward-based popup with icons and reward animations.
+
+# Global Font
+The Inter font is applied globally throughout the app via a CDN link in the globals.css file, ensuring consistent typography across the app.
+
+# Adding New Popups
+To add new types of popups, create a new popup component and integrate it into the global state using the PopupContext.js.
+
+# Folder Structure
+.
+├── components
+│   ├── FullPagePopup.js     # Full page popup component
+│   ├── CompactPopup.js      # Compact popup component
+│   └── context
+│       └── PopupContext.js  # Context API for managing popup state
+├── pages
+│   ├── _app.js              # Custom App component with PopupProvider
+│   └── index.js             # Home page with popup trigger buttons
+├── public                   # Public assets like images for popups
+├── styles
+│   ├── globals.css          # Global CSS file with Tailwind imports
+├── tailwind.config.js        # Tailwind configuration file
+└── package.json             # Project dependencies and scripts
+
