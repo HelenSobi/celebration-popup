@@ -4,7 +4,7 @@ This project is a Next.js application that features animated celebration popups 
 
 ## Demo
 
-You can visit the live demo here: [Live Demo Link](#) (Add link if deployed)
+You can visit the live demo here: [https://celebration-popup.netlify.app/]
 
 ## Features
 
