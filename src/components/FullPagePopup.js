@@ -27,10 +27,13 @@ const FullPagePopup = () => {
       <motion.div className="p-10 rounded-lg w-full max-w-3xl opacity-90 relative"
         initial="hidden" animate="visible" exit="hidden" variants={popupVariants}>
         <h1 className="text-5xl font-extrabold uppercase text-[#FFE02E] text-shadow mt-2">level up</h1>
-        <motion.div className="mt-6 p-6 text-xl font-bold inline-block"
-          initial="hidden" animate="visible" variants={badgeVariants} >
+
+        <motion.img src="/Lieutenant101.png" alt="New Badge" className="w-24 h-24 mx-auto mt-8"
+              initial="rest" animate="visible" variants={badgeVariants}/>
+        {/* <motion.div className="mt-6 p-6 text-xl font-bold inline-block"
+          initial="rest" animate="visible" variants={badgeVariants} >
           <Image src="/Lieutenant101.png" alt="New Badge" layout="responsive" width={100} height={50} className="w-24 h-24 mx-auto"/>
-        </motion.div>
+        </motion.div> */}
         <p className="text-3xl font-bold text-[#291911] mt-8 drop-shadow-md">corporal</p>
         {/* XP Bar */}
         <div className="relative w-full mt-2">
