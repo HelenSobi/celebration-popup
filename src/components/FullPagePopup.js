@@ -3,21 +3,19 @@ import { useEffect, useState } from 'react';
 import { usePopup } from './context/PopupContext'; 
 import { backdropVariants, popupVariants, badgeVariants} from './animationVariants';
 import { getPercentage , numberWithCommas } from './constants';
-import Image from 'next/image';
 
 const FullPagePopup = () => {
   const { isVisible, hidePopup } = usePopup(); // Use hidePopup from context
   const [progress, setProgress] = useState(0); // Track XP progress
   let totalScore = 50000;
   let achievedScore = 34500;
-
+  const scorePercentage= getPercentage(achievedScore, totalScore);
   const xpBarVariants = {
     initial: { width: '0%' },
     animate: { width: `${progress}%`, transition: { duration: 1.3, ease: 'easeInOut' } },
   };
   useEffect(() => {
     if (isVisible) {
-      const scorePercentage= getPercentage(achievedScore, totalScore);
       setTimeout(() => setProgress(scorePercentage), 500); 
     }
   }, [isVisible]);
@@ -28,18 +26,12 @@ const FullPagePopup = () => {
     <motion.div
       className="fixed inset-0 flex items-center justify-center z-40"
       initial="hidden" animate="visible" exit="hidden" variants={backdropVariants}>
-        <Image
-  src="/NewLevelBg.png"
-  alt="Popup Background"
-  layout="fill"
-  objectFit="cover" loading="eager"/>
-        {/* <motion.div className="fixed inset-0 bg-black"
-        style={{backgroundImage: `url('/NewLevelBg.png')`,backgroundSize: 'cover',backgroundPosition: 'center'}}></motion.div> */}
+        <motion.div className="fixed inset-0 bg-[#9a7538]"
+        style={{backgroundImage: `url('/NewLevelBg.png')`,backgroundSize: 'cover',backgroundPosition: 'center'}}></motion.div>
       <button  className="absolute top-4 right-4 text-xl font-bold text-white z-50" onClick={hidePopup}>&times; </button>
       <motion.div className="p-10 rounded-lg w-full max-w-3xl opacity-90 relative"
         initial="hidden" animate="visible" exit="hidden" variants={popupVariants}>
         <h1 className="text-5xl font-extrabold uppercase text-[#FFE02E] text-shadow mt-2">level up</h1>
-
         <motion.img src="/Lieutenant101.png" alt="New Badge" className="w-24 h-24 mx-auto mt-20 md:mt-12"
               initial="rest" animate="visible" variants={badgeVariants}/>
         <p className="text-3xl font-bold text-[#291911] mt-8 drop-shadow-md">corporal</p>
