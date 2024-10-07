@@ -67,6 +67,7 @@ To add new types of popups, create a new popup component and integrate it into t
 |   ├── animationVariants.js      # constant animation variants
 │   └── context
 │       └── PopupContext.js  # Context API for managing popup state
+│   └── constants.js              # getPercentage and numberwithcommas
 ├── pages
 │   ├── _app.js              # Custom App component with PopupProvider
 │   └── index.js             # Home page with popup trigger buttons

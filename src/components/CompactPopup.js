@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { usePopup } from '../components/context/PopupContext'; 
 import { backdropVariants, popupVariants, rewardVariants1, rewardVariants2, imageVariants } from './animationVariants';
-import Image from 'next/image';
 
 const CompactPopup = () => {
   const { isVisible, hidePopup } = usePopup();
@@ -21,8 +20,7 @@ const CompactPopup = () => {
           <h1 className="text-3xl font-extrabold text-[#F3BA2F] drop-shadow-md mt-2">Congratulations!</h1>
           <p className="mt-2 text-lg font-bold text-[#F3BA2F]">Command completed Successfully!</p>
           <p className="mt-4 text-xs text-[#C8AA7A]">You have successfully completed a command! Here are your well-earned rewards. Keep exploring the Command Center for even more exciting missions and bigger rewards!</p>
-          <p className="text-sm text-[#C8AA7A]">You have gained:</p>
-          
+          <p className="text-sm text-[#C8AA7A]">You have gained:</p>  
           {/* Reward Title with before and after icons */}
           <div className="flex justify-center items-center space-x-4 mt-4">
             <motion.img src="/beforeReward.png" alt="Before Reward Icon" className="w-28 h-1 ml-2"
@@ -31,7 +29,7 @@ const CompactPopup = () => {
             <motion.img src="/afterReward.png" alt="After Reward Icon" className="w-28 h-1 ml-2"
                initial="hidden" animate="visible" variants={rewardVariants2}/>
           </div>
-          {/* Rewards with animations */}
+          {/* Rewards */}
           <div className="flex justify-center items-center space-x-4 mt-4">
             <motion.img src="/Reward1.png" alt="Reward 1" className="w-24 h-24 ml-2"
               initial="hidden" animate="visible" variants={imageVariants} custom={0} />
