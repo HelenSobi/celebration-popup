@@ -27,7 +27,7 @@ const FullPagePopup = () => {
   return (
     <motion.div
       className="fixed inset-0 flex items-center justify-center z-40"
-      initial="hidden" animate="visible" exit="hidden" variants={backdropVariants}>
+      initial="hidden" animate="visible" exit="hidden">
         <motion.div className="fixed inset-0"
         style={{backgroundImage: `url('/NewLevelBg.png')`,backgroundSize: 'cover',backgroundPosition: 'center'}}></motion.div>
       <button  className="absolute top-4 right-4 text-xl font-bold text-white z-50" onClick={hidePopup}>&times; </button>
