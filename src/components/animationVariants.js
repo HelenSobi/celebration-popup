@@ -17,7 +17,7 @@ export const popupVariants = {
   };
 export const badgeVariants = {
     rest: { rotate: 0 },
-    visible: { rotate: 360, transition: { duration: 0.8 } },
+    visible: { rotate: 360, transition: { duration: 1 } },
   };
 export const rewardVariants1 = {
     hidden:{ x: -50, opacity: 0 },

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { usePopup } from './context/PopupContext'; 
 import { backdropVariants, popupVariants, badgeVariants} from './animationVariants';
 import { getPercentage , numberWithCommas } from './constants';
+import Image from 'next/image';
 
 const FullPagePopup = () => {
   const { isVisible, hidePopup } = usePopup(); // Use hidePopup from context
@@ -24,9 +25,11 @@ const FullPagePopup = () => {
   if (!isVisible) return null;
 
   return (
-    <motion.div className="fixed inset-0 flex justify-center z-40"
-      style={{ backgroundImage: 'url("/NewLevelBg.png")',  backgroundSize: 'cover', backgroundPosition: 'center'}}
+    <motion.div
+      className="fixed inset-0 flex items-center justify-center z-40"
       initial="hidden" animate="visible" exit="hidden" variants={backdropVariants}>
+        <motion.div className="fixed inset-0 bg-black"
+        style={{backgroundImage: `url('/NewLevelBg.png')`,backgroundSize: 'cover',backgroundPosition: 'center'}}></motion.div>
       <button  className="absolute top-4 right-4 text-xl font-bold text-white z-50" onClick={hidePopup}>&times; </button>
       <motion.div className="p-10 rounded-lg w-full max-w-3xl opacity-90 relative"
         initial="hidden" animate="visible" exit="hidden" variants={popupVariants}>
